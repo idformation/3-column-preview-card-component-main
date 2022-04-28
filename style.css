@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+
+:root {
+    --overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.attribution {
+    font-size: 1em; text-align: center;
+    margin-top: auto;
+    align-self: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.7em;
+}
+
+h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+img {
+    margin-bottom: 2em;
+}
+
+.content {
+
+}
+
+.parent {
+    display: flex;
+    flex-flow: row nowrap;
+    animation: fadeIn ease-in 1.5s forwards;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.child {
+    position: relative;
+    flex-basis: calc(33%-5em);
+    padding-top: 5em;
+    padding: 3em;
+    min-width: 16em;
+    max-width: 16em;
+    height: 25em;
+}
+
+.child:nth-child(1) {
+    background-color: hsl(31, 77%, 52%);
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.child:nth-child(2) {
+    background-color: hsl(184, 100%, 22%);
+    animation: zoomOut ease-in 1s forwards;
+}
+
+.child:nth-child(3) {
+    background-color: hsl(179, 100%, 13%);
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.btn_LM {
+    padding: 0.8em 1.7em;
+    border: none;
+    border-radius: 5em;
+    border: 0.1em solid transparent;
+    mix-blend-mode: screen;
+    font-size: 1em;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2.5em;
+}
+
+.btn_LM:hover {
+    background-color: transparent;
+    color: white;
+    border: 0.1em solid white;
+    cursor: pointer;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        gap: 75em;
+    }
+
+    100% {
+        opacity: 1;
+        gap: 0em;
+    }
+}
+
+@keyframes sliderUp {
+    0% {
+        opacity: 0;
+        margin-top: -1200px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(10, 10);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* FUCKING RESPONSIVE */
+
+@media only screen and (max-width: 60em) {
+
+    body {
+        height: auto;
+    }
+
+    .parent {
+        flex-flow: column wrap;
+        animation: sliderUp ease-in 1s forwards;
+    }
+
+    .child:nth-child(1) {
+        background-color: hsl(31, 77%, 52%);
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-left-radius: unset;
+    }
+    
+    .child:nth-child(2) {
+        background-color: hsl(184, 100%, 22%);
+        animation: none;
+    }
+    
+    .child:nth-child(3) {
+        background-color: hsl(179, 100%, 13%);
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-top-right-radius: unset;
+    }
+
+    .attribution {
+        width: 10em;
+    }
+}
